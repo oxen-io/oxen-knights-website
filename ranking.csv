@@ -1,0 +1,15 @@
+﻿RANK,POINTS,REWARD
+Peasant,0,
+Squire,100,
+Noble,200,
+Chevalier,500,
+Knight,1000,Oxen Shirt
+Officer Knight,1500,
+Noble Knight,2500,100 Oxen
+Bishop Knight,4000,
+Imperial Knight,6000,300 Oxen
+Grand Knight,8500,
+Lord Knight,11500,500 Oxen
+Lord Commander,15000,
+King,20000,
+Emperor,30000,2000 Oxen

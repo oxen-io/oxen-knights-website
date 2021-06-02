@@ -1,0 +1,93 @@
+p {
+    color: white;
+  }
+
+.navbar{
+  background-color:#1E1D48!important;
+}
+body{
+  background-color:#DBF7F5;
+  padding-bottom:200px
+}
+
+#textblock{
+  display:block;
+  max-width:600px;
+  margin: 0px auto;
+}
+
+.column_name {
+  font-size:18px;
+  font-family:Work Sans;
+  font-weight:bold;
+  color:#12C7BA
+}
+
+th {
+  width:300px;
+  padding-top:4px;
+  padding-bottom:4px;
+  height:30px;
+}
+
+.handle {
+  font-family:Work Sans;
+  text-align: center;
+}
+
+.number {
+  font-family:Prompt;
+  text-align: center;
+}
+
+.top-cell{
+  background-color:#1E1D48;
+  text-align: center;
+}
+
+.rewards{
+  font-family:Prompt  
+}
+
+.points{
+  font-family:Prompt          
+}
+.pbot20{
+  padding-bottom:20px;
+}
+.pbot10{
+  padding-bottom:10px;
+}
+table, td, th {
+  border: 1px solid black;
+}
+
+h1 {
+  font-size:40px;
+  font-family: 'Cinzel Decorative', cursive;
+  font-weight:700;
+}
+
+h2 {
+  font-family: Prompt;
+}
+
+table {
+  border-collapse: collapse;
+  border-radius:10px
+}
+
+.wrapper {
+  width: 600px;
+  overflow: hidden; /* add this to contain floated children */
+}
+.left {
+  width: 50%;
+  text-align: center;
+  float:left; /* add this */
+}
+.right {
+  width: 50%;
+  text-align: center;
+  float: left; /* add this */
+}

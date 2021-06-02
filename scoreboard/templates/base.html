@@ -1,0 +1,42 @@
+{% load static %}
+{% block head %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}"/>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@100;400&family=Work+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+
+    {% endblock %}
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark rounded ">
+        <a class="navbar-brand" href="#"><h1><font color="white">Oxen</font><font color="#FF9F0A">Knights</font></h1></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExample09">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url "home" %}">Scoreboard <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url "ranking-and-reward" %}">Rankings & Rewards <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+<br/>
+<br/>
+<br/>
+
+{% block body %}
+{% endblock %}
+
+</body>
+</html>
