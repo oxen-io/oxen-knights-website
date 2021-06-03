@@ -1,15 +1,15 @@
-﻿RANK,POINTS,REWARD
-Peasant,0,
-Squire,100,
-Noble,200,
-Chevalier,500,
-Knight,1000,Oxen Shirt
-Officer Knight,1500,
-Noble Knight,2500,100 Oxen
-Bishop Knight,4000,
-Imperial Knight,6000,300 Oxen
-Grand Knight,8500,
-Lord Knight,11500,500 Oxen
-Lord Commander,15000,
-King,20000,
-Emperor,30000,2000 Oxen
+﻿RANK,POINTS,REWARD,IMG
+Peasant,0,,static/assets/peasant.svg
+Squire,100,,static/assets/squire.svg
+Noble,200,,static/assets/noble.svg
+Chevalier,500,,static/assets/chevalier.svg
+Knight,1000,Oxen Shirt,static/assets/knight.svg
+Officer Knight,1500,,static/assets/officerknight.svg
+Noble Knight,2500,100 Oxen,static/assets/nobleknight.svg
+Bishop Knight,4000,,static/assets/bishopknight.svg
+Imperial Knight,6000,300 Oxen,static/assets/imperialknight.svg
+Grand Knight,8500,,static/assets/grandknight.svg
+Lord Knight,11500,500 Oxen,static/assets/lordknight.svg
+Lord Commander,15000,,static/assets/lordcommander.svg
+King,20000,,static/assets/king.svg
+Emperor,30000,2000 Oxen,static/assets/emperor.svg

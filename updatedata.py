@@ -109,7 +109,12 @@ def get_rank(point):
 def total_table(scoreboard):
         
     start_html = """
-
+    <script>
+    $(window).on("load resize ", function() {
+  var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+  $('.tbl-header').css({'padding-right':scrollWidth});
+}).resize();
+</script>
     {% extends 'base.html' %}
     {% block body %}
     <html><head>
@@ -122,38 +127,36 @@ def total_table(scoreboard):
     <center>
     <img width="350px" class="pbot20" src="static/assets/OXEN_BRAND_PRIMARY.png"><br>
     <h1 class="pbot10">Knight Scoreboard</h1></center>
-    <table>
-    <th class="top-cell"><font class="column_name">Twitter Handle</font></th>
-    <th class="top-cell"><font class="column_name">Ranking</font></th>
-    <th class="top-cell"><font class="column_name">Points</font></th>
-    <th class="top-cell"><font class="column_name">Tweets</font></th>
-    <th class="top-cell"><font class="column_name">Likes</font></th>
-    <th class="top-cell"><font class="column_name">Retweets</font></th>
+    <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+                <th><font class="column_name">Twitter Handle</font></th>
+                <th><font class="column_name">Ranking</font></th>
+                <th><font class="column_name">Points</font></th>
+                <th><font class="column_name">Tweets</font></th>
+                <th><font class="column_name">Likes</font></th>
+                <th><font class="column_name">Retweets</font></th>
+            </thread>
+        </table>
+    </div>
+    <div class="tbl-content">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+                <tr>
     """
+    end_html = "</tbody></table></div></body></html>{% endblock %}"
 
-    end_html = "</table></div></body></html>{% endblock %}"
-    flag=0
     for item in scoreboard.items():
-        if flag == 0:
-            start_html += f"""<tr>
-            <th class="handle"><img style="vertical-align:middle" width="25px" src="static/assets/crown.png"> <a href="https://twitter.com/{item[0]}">@{item[0]}</a></th>
-            <th class="number">{item[1]['ranking']}</th>
-            <th class="number">{item[1]['points']}</th>
-            <th class="number">{item[1]['tweets']}</th>
-            <th class="number">{item[1]['likes']}</th>
-            <th class="number">{item[1]['retweets']}</th>
-            """
-            flag=1
-        else:
-            start_html += f"""<tr>
-            <th class="handle"><a href="https://twitter.com/{item[0]}">@{item[0]}</a></th>
-            <th class="number">{item[1]['ranking']}</th>
-            <th class="number">{item[1]['points']}</th>
-            <th class="number">{item[1]['tweets']}</th>
-            <th class="number">{item[1]['likes']}</th>
-            <th class="number">{item[1]['retweets']}</th>"""
+        start_html += f"""<tr>
+        <td> <a href="https://twitter.com/{item[0]}">@{item[0]}</a></th>
+        <td><img style="width:30px" src ="static/assets/{item[1]['ranking'].lower()}.svg"> {item[1]['ranking']}</th>
+        <td>{item[1]['points']}</td>
+        <td>{item[1]['tweets']}</td>
+        <td>{item[1]['likes']}</td>
+        <td>{item[1]['retweets']}</td>
+        </tr>
+        """
 
-        
     start_html += end_html
     f = open('scoreboard/templates/index.html','w', encoding="utf-8")
     f.write(start_html)

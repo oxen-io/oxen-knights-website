@@ -16,32 +16,42 @@ body{
   margin: 0px auto;
 }
 
-.column_name {
-  font-size:18px;
-  font-family:Work Sans;
-  font-weight:bold;
-  color:#12C7BA
-}
 
-th {
-  width:300px;
-  padding-top:4px;
-  padding-bottom:4px;
-  height:30px;
+.tbl-header{
+  font-family:Prompt ;
+  background-color: #1E1D48!important;
+ }
+.tbl-content{
+  font-family:Work Sans;
+  height:1000px;
+  overflow-x:auto;
+  margin-top: 0px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+th{
+  padding: 20px 15px;
+  text-align: center;
+  font-weight: 500;
+  color: white;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+td{
+  padding: 15px;
+  text-align: center;
+  vertical-align:middle;
+  font-weight: 300;
+  color: black;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+table{
+  width:100%;
+  table-layout: fixed;
 }
 
 .handle {
   font-family:Work Sans;
-  text-align: center;
-}
-
-.number {
-  font-family:Prompt;
-  text-align: center;
-}
-
-.top-cell{
-  background-color:#1E1D48;
   text-align: center;
 }
 
@@ -52,14 +62,13 @@ th {
 .points{
   font-family:Prompt          
 }
+
 .pbot20{
   padding-bottom:20px;
 }
+
 .pbot10{
   padding-bottom:10px;
-}
-table, td, th {
-  border: 1px solid black;
 }
 
 h1 {
@@ -70,11 +79,6 @@ h1 {
 
 h2 {
   font-family: Prompt;
-}
-
-table {
-  border-collapse: collapse;
-  border-radius:10px
 }
 
 .wrapper {
