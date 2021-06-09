@@ -1,33 +1,23 @@
-p {
-    color: white;
-  }
-
-.navbar{
-  background-color:#1E1D48!important;
-}
-body{
-  background-color:#DBF7F5;
-  padding-bottom:200px
+::-webkit-scrollbar {
+    width: 6px;
 }
 
-#textblock{
-  display:block;
-  max-width:600px;
-  margin: 0px auto;
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 }
 
-
-.tbl-header{
-  font-family:Prompt ;
-  background-color: #1E1D48!important;
- }
-.tbl-content{
-  font-family:Work Sans;
-  height:1000px;
-  overflow-x:auto;
-  margin-top: 0px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 }
+.scoreboard-text{
+    color:black;
+}
+.point-text{
+    margin-bottom:40px;
+    width:75%;
+    color:black;
+}
+
 th{
   padding: 20px 15px;
   text-align: center;
@@ -36,6 +26,7 @@ th{
   text-transform: uppercase;
   overflow: hidden;
 }
+
 td{
   padding: 15px;
   text-align: center;
@@ -45,30 +36,10 @@ td{
   border-bottom: solid 1px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
+
 table{
   width:100%;
   table-layout: fixed;
-}
-
-.handle {
-  font-family:Work Sans;
-  text-align: center;
-}
-
-.rewards{
-  font-family:Prompt  
-}
-
-.points{
-  font-family:Prompt          
-}
-
-.pbot20{
-  padding-bottom:20px;
-}
-
-.pbot10{
-  padding-bottom:10px;
 }
 
 h1 {
@@ -78,20 +49,107 @@ h1 {
 }
 
 h2 {
+  font-family: 'Cinzel Decorative', cursive;
+}
+
+h3 {
   font-family: Prompt;
+  color:#FF9F0A;
+}
+
+body{
+  background-color:#DBF7F5;
+  padding-bottom:200px
+}
+
+p {
+    color: white;
+}
+
+a:hover{
+    color:#FF9F0A!important;
+}
+
+.navbar{
+  background-color:#1E1D48!important;
+}
+
+.menu-text{
+    font-family:Prompt;
+ }
+
+.points-text{
+    font-size:20px;
+    color:#FF9F0A;
+    font-weight:600;
+}
+
+.left{
+    width:33%;
+    float: left;
+    display: block;
+    margin: 0px auto;
+}
+.middle{
+    width:33%;
+    float: left;
+    display: block;
+    margin: 0px auto;
+
+}
+.right{
+    width:33%;
+    float: left;
+    display: block;
+    margin: 0px auto;
+}
+
+.small {
+    width:50%;
+}
+
+#textblock{
+  display:block;
+  max-width:600px;
+  margin: 0px auto;
+}
+
+.tbl-header{
+  font-family:Prompt ;
+  background-color: #1E1D48!important;
+ }
+
+.tbl-content{
+  font-family:Work Sans;
+  height:55vh;
+  overflow-x:auto;
+  margin-top: 0px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.handle {
+  font-family:Work Sans;
+  text-align: center;
+}
+
+.rewards{
+  font-family:Prompt
+}
+
+.points{
+  font-family:Prompt
+}
+
+.pbot20{
+  padding-bottom:20px;
+}
+
+.pbot10{
+    padding-top:10px;
+  padding-bottom:10px;
 }
 
 .wrapper {
   width: 600px;
   overflow: hidden; /* add this to contain floated children */
-}
-.left {
-  width: 50%;
-  text-align: center;
-  float:left; /* add this */
-}
-.right {
-  width: 50%;
-  text-align: center;
-  float: left; /* add this */
 }

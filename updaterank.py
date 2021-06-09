@@ -1,13 +1,13 @@
 import pandas as pd
 
 def rankings(ranking):
-        
+
     start_html = """
 
     {% extends 'base.html' %}
 
     {% block body %}
- 
+
     <body>
 
     <div class="container">
@@ -35,19 +35,19 @@ def rankings(ranking):
             start_html += f"""<tr>
             <td><img style="width:100px" src ="../{row['IMG']}"></th>
             <td>{row['RANK']}</td>
-            <td>{row['POINTS']}</td>
-            <td>\/</td>
+            <td class="points-text">{row['POINTS']}</td>
+            <td>-</td>
             """
 
         else:
             start_html += f"""<tr>
             <td><img style="width:100px" src ="../{row['IMG']}"></th>
             <td>{row['RANK']}</td>
-            <td>{row['POINTS']}</td>
+            <td class="points-text">{row['POINTS']}</td>
             <td>{row['REWARD']}</td>
             """
 
-        
+
     start_html += end_html
     f = open('scoreboard/templates/templatesviews/rankingreward.html','w', encoding="utf-8")
     f.write(start_html)

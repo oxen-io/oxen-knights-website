@@ -19,4 +19,5 @@ from scoreboard import views
 
 urlpatterns = [
     url('ranking-and-rewards/', views.RankingReward.as_view(), name='ranking-and-reward'),
+    url('point-system/', views.PointSystem.as_view(), name='point-system'),
 ]

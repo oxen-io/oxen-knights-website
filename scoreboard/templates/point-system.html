@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block body %}
+<html><head>
+<meta charset="UTF-8">
+</head>
+
+<body>
+<div class="container">
+    <center>
+    <img width="350px" class="pbot20" src="../static/assets/OXEN_BRAND_PRIMARY.png"><br>
+    <h1 class="pbot10">Point System</h1></center>
+    <center>
+                <p class="point-text">
+        Only humans are permitted among the ranks of the Oxen Knights. Points earnt using the evils of the occult or through the use of bots will not be allowed.
+
+        Oxen themselves can award or deduct points from any knight, for any reason. Stay loyal to the cause.
+        </p>
+    <div class="left">
+        <h2>Tweets</h2>
+        <h3>10 Points</h3>
+        <img class="pbot20 small" src="../static/assets/tweet.svg"><br>
+        Tweets with the $OXEN cashtag get 10 points. <br>The maximum a single tweet can get is 150 points.
+    </div>
+    <div class="middle">
+        <h2>Retweets</h2>
+        <h3>5 Points</h3>
+        <img class="pbot20 small" src="../static/assets/retweet.svg"><br>
+        Every Retweet a tweet gets receives an extra 5 points.
+    </div>
+    <div class="right">
+        <h2>Likes</h2>
+        <h3>1 Points</h3>
+        <img class="pbot20 small" src="../static/assets/like.svg"><br>
+        Every Like a tweet gets receives an extra 1 point.
+    </div><br>
+    </center>
+</div>
+{% endblock %}

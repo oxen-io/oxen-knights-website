@@ -14,5 +14,11 @@ class RankingReward(TemplateView):
         form = HomeForm()
         return render(request,self.template_name, {'form':form})
 
+class PointSystem(TemplateView):
+    template_name = 'point-system.html'
+    def get(self, request, *args, **kwargs):
+        form = HomeForm()
+        return render(request,self.template_name, {'form':form})
+
 def home(request):
     return render(request,'index.html')

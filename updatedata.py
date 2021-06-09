@@ -18,7 +18,7 @@ auth.set_access_token(access_token, access_token_secret)
 api = tw.API(auth, wait_on_rate_limit=True)
 
 search_term = "$oxen -filter:retweets"
-
+filepath = "/home/modeify/oxen-knight/"
 raw_data = tw.Cursor(api.search,
                    q=search_term,
                    lang="en",
@@ -33,21 +33,28 @@ MAX_POINTS = 150
 def update_dataset(data):
     json_file =[[],[],[],[],[]]
     try:
-        with open('data.json', 'r') as F:
+        with open(filepath + 'data.json', 'r') as F:
             json_file = json.loads(F.read())
     except:
-        for i in range(0,len(data[0])):
-            if data[0][i] not in json_file[0]:
-                json_file[0].append(data[0][i])
-                json_file[1].append(data[1][i])
-                json_file[2].append(data[2][i])
-                json_file[3].append(data[3][i])
-                json_file[4].append(data[4][i])
+        print('no json file')
+    for i in range(0,len(data[0])):
+        if data[0][i] not in json_file[0]:
+            json_file[0].append(data[0][i])
+            json_file[1].append(data[1][i])
+            json_file[2].append(data[2][i])
+            json_file[3].append(data[3][i])
+            json_file[4].append(data[4][i])
+        else:
+            json_file[1][json_file[0].index(data[0][i])] = data[1][i]
+            json_file[2][json_file[0].index(data[0][i])] = data[2][i]
+            json_file[3][json_file[0].index(data[0][i])] = data[3][i]
+            json_file[4][json_file[0].index(data[0][i])] = data[4][i]
 
-    with open('data.json', 'w') as F:
+
+    with open(filepath + 'data.json', 'w') as F:
         F.write(json.dumps(json_file))
     return json_file
-    
+
 def main():
     ids = []
     tweets=[]
@@ -73,7 +80,7 @@ def main():
 
 def get_scoreboard(usernames,favorites,retweets):
     username_points = {}
-    
+
     for i in range(len(usernames)):
 
         if usernames[i] in username_points:
@@ -87,16 +94,19 @@ def get_scoreboard(usernames,favorites,retweets):
                                     'retweets':retweets[i],
                                     'points':min(MAX_POINTS,(TWEET_POINTS + favorites[i] * LIKE_POINTS + retweets[i] * RETWEET_POINTS))}
 
-    sorted_keys = sorted(username_points,reverse=True, key=lambda x: (username_points[x]['points'], username_points[x]['tweets']))  
+    sorted_keys = sorted(username_points,reverse=True, key=lambda x: (username_points[x]['points'], username_points[x]['tweets']))
     scoreboard = {}
 
     for key in sorted_keys:
         scoreboard[key] = username_points[key]
 
+    with open(filepath + 'backups/'+ str(DT.date.today())+'.json', 'w') as F:
+        F.write(json.dumps(scoreboard))
+
     return scoreboard
 
 def get_rank(point):
-    df = pd.read_csv('ranking.csv')
+    df = pd.read_csv(filepath + 'ranking.csv')
     df = df[::-1]
     rankings = df['RANK'].tolist()
     points_needed = df['POINTS'].tolist()
@@ -104,29 +114,30 @@ def get_rank(point):
         for i in range(0,len(points_needed)):
             if point > points_needed[i] :
                 return str(rankings[i])
-    return 'Peasant'
+    return 'Villager'
 
 def total_table(scoreboard):
-        
+
     start_html = """
     <script>
-    $(window).on("load resize ", function() {
-  var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
-  $('.tbl-header').css({'padding-right':scrollWidth});
-}).resize();
-</script>
+        $(window).on("load resize ", function() {
+        var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+        $('.tbl-header').css({'padding-right':scrollWidth});
+        }).resize();
+    </script>
     {% extends 'base.html' %}
     {% block body %}
     <html><head>
     <meta charset="UTF-8">
     </head>
- 
+
     <body>
 
     <div class="container">
     <center>
     <img width="350px" class="pbot20" src="static/assets/OXEN_BRAND_PRIMARY.png"><br>
-    <h1 class="pbot10">Knight Scoreboard</h1></center>
+    <h1 class="pbot10">Knight Scoreboard</h1>
+    <p class="scoreboard-text">Tweets with $OXEN cashtag earns you <a href="/point-system/">points</a></p></center>
     <div class="tbl-header">
         <table cellpadding="0" cellspacing="0" border="0">
             <thead>
@@ -147,22 +158,23 @@ def total_table(scoreboard):
     end_html = "</tbody></table></div></body></html>{% endblock %}"
 
     for item in scoreboard.items():
-        start_html += f"""<tr>
-        <td> <a href="https://twitter.com/{item[0]}">@{item[0]}</a></th>
-        <td><img style="width:30px" src ="static/assets/{item[1]['ranking'].lower()}.svg"> {item[1]['ranking']}</th>
-        <td>{item[1]['points']}</td>
-        <td>{item[1]['tweets']}</td>
-        <td>{item[1]['likes']}</td>
-        <td>{item[1]['retweets']}</td>
-        </tr>
-        """
+        if item[0] != 'Lam32938077':
+            start_html += f"""<tr>
+            <td> <a href="https://twitter.com/{item[0]}">@{item[0]}</a></th>
+            <td><img style="width:30px" src ="static/assets/{item[1]['ranking'].lower()}.svg"> {item[1]['ranking']}</th>
+            <td class="points-text">{item[1]['points']}</td>
+            <td>{item[1]['tweets']}</td>
+            <td>{item[1]['likes']}</td>
+            <td>{item[1]['retweets']}</td>
+            </tr>
+            """
 
     start_html += end_html
-    f = open('scoreboard/templates/index.html','w', encoding="utf-8")
+    f = open(filepath + 'scoreboard/templates/index.html','w', encoding="utf-8")
     f.write(start_html)
     f.close()
 
-    
+
 main()
 
 
