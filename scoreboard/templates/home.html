@@ -1,0 +1,310 @@
+
+{% extends 'base.html' %}
+{% block body %}
+<html><head>
+<meta charset="UTF-8">
+</head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        $(window).on("load resize ", function() {
+        var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+        $('.tbl-header').css({'padding-right':scrollWidth});
+        }).resize();
+    </script>
+<body>
+<a name="scoreboard"></a>
+<section class="scoreboard-section">
+    <div class="container">
+                {%if points %}
+        <div class="progress-section">
+            <div class="rank1">
+                <img class="point-system-rank" src="/static/assets/{{current_rank}}.svg">
+                <center><p class="rank-text">{{current_rank}}</p></center>
+            </div>
+            <div class="bar">
+                <center>
+                    <p class="handle">@{{handle}}</p>
+                    <p class="current-points">{{points}} points</p>
+                    <p class="needed-points">{{needed}} points till next rank</p>
+                </center>
+                <div class="progress-bar1">
+                    <div class="progress1" style="height:24px;width:{{percent}}%"><div class="progress-percent">{{percent}}%</div></div>
+                </div>
+                <center>
+                    <form class="input-text" action="" method="post">
+                        {% csrf_token %}
+                        {{ form }}
+                        <button class="check-rank-button" type="submit" name="check">CHECK RANK</button>
+                    </form>
+                </center>
+            </div>
+            <div class="rank2">
+                <img class="point-system-rank" src="/static/assets/{{next_rank}}.svg">
+                <center>
+                <p class="rank-text">{{next_rank}}</p>
+                </center>
+            </div>
+        </div>
+        {%elif status == 0 %}
+        <div class="progress-section">
+
+            <div class="rank1">
+                <img class="point-system-rank" src="/static/assets/villager.svg">
+                <center><p class="rank-text">Villager</p></center>
+            </div>
+            <div class="bar">
+                <center>
+                    <p class="current-points">"{{handle}}" is not a Knight</p>
+                    <p class="needed-points">Start tweeting $OXEN and become a Knight</p>
+                </center>
+                <div class="progress-bar1">
+                    <div class="progress1" style="height:24px;width:0%"></div>
+                </div>
+                <center>
+                    <form class="input-text" action="" method="post">
+                        {% csrf_token %}
+                        {{ form }}
+                        <button class="check-rank-button" type="submit" name="check">CHECK RANK</button>
+                    </form>
+                </center>
+            </div>
+            <div class="rank2">
+                <img class="point-system-rank" src="/static/assets/squire.svg">
+                <center>
+                <p class="rank-text">Squire</p>
+                </center>
+            </div>
+        </div>
+        {%else%}
+        <div class="progress-section">
+            <div class="rank1">
+                <img class="point-system-rank" src="/static/assets/villager.svg">
+                <center><p class="rank-text">Villager</p></center>
+            </div>
+            <div class="bar">
+                <center>
+                    <p style="padding-top:25px" class="current-points">Check your ranking</p>
+                </center>
+                <div class="progress-bar1">
+                    <div class="progress1" style="height:24px;width:0%"></div>
+                </div>
+                <center>
+                    <form class="input-text" action="" method="post">
+                        {% csrf_token %}
+                        {{ form}}
+                        <button class="check-rank-button" type="submit" name="check">CHECK RANK</button>
+                    </form>
+                </center>
+            </div>
+            <div class="rank2">
+                <img class="point-system-rank" src="/static/assets/emperor.svg">
+                <center>
+                <p class="rank-text">Emperor</p>
+                </center>
+            </div>
+        </div>
+        {%endif%}
+        <div class="lhs">
+            <h2>Scoreboard</h2>
+            <div class="tbl-header">
+                <table cellpadding="0" cellspacing="0" border="0">
+                        <th><font class="column_name">Rank</font></th>
+                        <th class="handle-text"><font class="column_name">Handle</font></th>
+                        <th><font class="column_name">Points</font></th>
+                        <th><font class="column_name">Tweets</font></th>
+                        <th><font class="column_name">Likes</font></th>
+                        <th><font class="column_name">Retweets</font></th>
+                </table>
+            </div>
+            <div class="tbl-content">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tbody>
+                        <tr>
+                        {% for key, value in scoreboard.items %}
+                        <td><img style="width:45px" title="{{value.ranking}}" src ="/static/assets/{{value.ranking}}.svg"></td>
+                        <td class="handle-text"> <a href="https://twitter.com/{{key}}">@{{key}}</a></td>
+                        <td class="points-text">{{value.points}}</td>
+                        <td>{{value.tweets}}</td>
+                        <td>{{value.likes}}</td>
+                        <td>{{value.retweets}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="rhs">
+            <div class="top-knight">
+                <h2>Top Knight</h2>
+                <div class="knight-container">
+                    <div class="lhs-knight">
+                    <center>
+                        <img src="static/assets/{{top_knight_values.ranking}}.svg">
+                        <h4 class="knight-rank">{{top_knight_values.ranking}}</h4>
+                    </center>
+                    </div>
+                    <div class="rhs-knight">
+                        <h3>{{top_knight}}</h3>
+
+                        <h4>Tweets: <font color="#C3F53A">{{top_knight_values.tweets}}</font></h4>
+                        <h4>Retweets: <font color="#C3F53A">{{top_knight_values.retweets}}</font></h4>
+                        <h4>Likes: <font color="#C3F53A">{{top_knight_values.likes}}</font></h4>
+                    </div>
+                </div>
+                <h2>Tweet of the week</h2>
+                <div class="top-tweet-container">
+                    <h3 class="top_tweet_username"><a href="https://twitter.com/{{top_tweet.username}}">@{{top_tweet.username}} </a>| Points: <font color="#C3F53A">{{top_tweet.points}}</font></h3>
+                    <p class="top-tweet-text"><a href="https://twitter.com/{{top_tweet.username}}/status/{{top_tweet.tweet_id}}">{{top_tweet.tweet}}</a></p>
+                    <p class="likes-retweets"> <font color="#cecece"></font> <img style="width:20px" src="/static/assets/heart.svg"> <font color="#cecece">{{top_tweet.favorites}}    </font>     <img style="width:25px" src="/static/assets/retweet.svg"> <font color="#cecece">{{top_tweet.retweets}}</font>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="divider">
+</section>
+<a name="point-system"></a>
+<section class="point-system-section">
+    <div class="container">
+    <center>
+            <h1 class="pbot10" style="padding-top:30px">Point System</h1>
+            <p class="point-text">
+            Only humans are permitted among the ranks of the Oxen Knights. Points earnt using the evils of the occult or through the use of bots will not be allowed.
+
+            Oxen themselves can award or deduct points from any knight, for any reason. Stay loyal to the cause.
+            </p>
+        <div class="left">
+            <img class="pbot20 small" src="../static/assets/tweet.svg"><br>
+            <h2>Tweets</h2>
+            <h3>10 Points</h3>
+        <p class="point-system-text">
+            Tweets with the $OXEN cashtag get 10 points. The maximum a single tweet can get is 150 points.
+        </p>
+        </div>
+        <div class="middle">
+            <img class="pbot20 small" src="../static/assets/retweet.svg"><br>
+            <h2>Retweets</h2>
+            <h3>5 Points</h3>
+            <p class="point-system-text">
+            Every Retweet a tweet gets receives an extra 5 points.
+        </p>
+        </div>
+        <div class="right">
+            <img class="pbot20 small" src="../static/assets/heart.svg"><br>
+            <h2>Likes</h2>
+            <h3>1 Points</h3>
+            <p class="point-system-text">
+            Every Like a tweet gets receives an extra 1 point.
+        </p>
+        </div><br>
+        </center>
+    </div>
+</section>
+<section class="divider">
+</section>
+<a name="ranking"></a>
+<section class="ranking-section">
+
+       <div class="container">
+    <center>
+    <h1 class="pbot10">Ranking and Rewards</h1></center>
+    <center><p class='point-text'> DM <a href="https://twitter.com/Oxen_io">@Oxen_io</a> on twitter to claim your prizes.</p></center>
+    <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+    <th class="top-cell"><font class="column_name">Flair</font></th>
+    <th class="top-cell"><font class="column_name">Rank</font></th>
+    <th class="top-cell"><font class="column_name">Points</font></th>
+    <th class="top-cell"><font class="column_name">Reward</font></th>
+        </thread>
+        </table>
+    </div>
+    <div class="tbl-content1">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+                <tr>
+    <tr>
+            <td><img style="width:100px" src ="../static/assets/Villager.svg"></th>
+            <td>Villager</td>
+            <td class="points-text">0</td>
+            <td>-</td>
+            <tr>
+            <td><img style="width:100px" src ="../static/assets/squire.svg"></th>
+            <td>Squire</td>
+            <td class="points-text">100</td>
+            <td>-</td>
+            <tr>
+            <td><img style="width:100px" src ="../static/assets/noble.svg"></th>
+            <td>Noble</td>
+            <td class="points-text">200</td>
+            <td>-</td>
+            <tr>
+            <td><img style="width:100px" src ="../static/assets/chevalier.svg"></th>
+            <td>Chevalier</td>
+            <td class="points-text">500</td>
+            <td>-</td>
+            <tr>
+            <td><img style="width:100px" src ="../static/assets/knight.svg"></th>
+            <td>Knight</td>
+            <td class="points-text">1000</td>
+            <td>Oxen Shirt</td>
+            <tr>
+            <td><img style="width:100px" src ="../static/assets/officer knight.svg"></th>
+            <td>Officer Knight</td>
+            <td class="points-text">1500</td>
+            <td>-</td>
+            <tr>
+            <td><img style="width:100px" src ="../static/assets/noble knight.svg"></th>
+            <td>Noble Knight</td>
+            <td class="points-text">2500</td>
+            <td>100 Oxen</td>
+            <tr>
+            <td><img style="width:100px" src ="../static/assets/bishop knight.svg"></th>
+            <td>Bishop Knight</td>
+            <td class="points-text">4000</td>
+            <td>-</td>
+            <tr>
+            <td><img style="width:100px" src ="../static/assets/imperialknight.svg"></th>
+            <td>Imperial Knight</td>
+            <td class="points-text">6000</td>
+            <td>300 Oxen</td>
+            <tr>
+            <td><img style="width:100px" src ="../static/assets/grandknight.svg"></th>
+            <td>Grand Knight</td>
+            <td class="points-text">8500</td>
+            <td>-</td>
+            <tr>
+            <td><img style="width:100px" src ="../static/assets/lordknight.svg"></th>
+            <td>Lord Knight</td>
+            <td class="points-text">11500</td>
+            <td>500 Oxen</td>
+            <tr>
+            <td><img style="width:100px" src ="../static/assets/lordcommander.svg"></th>
+            <td>Lord Commander</td>
+            <td class="points-text">15000</td>
+            <td>-</td>
+            <tr>
+            <td><img style="width:100px" src ="../static/assets/king.svg"></th>
+            <td>King</td>
+            <td class="points-text">20000</td>
+            <td>-</td>
+            <tr>
+            <td><img style="width:100px" src ="../static/assets/emperor.svg"></th>
+            <td>Emperor</td>
+            <td class="points-text">30000</td>
+            <td>2000 Oxen</td>
+            </table></div>
+</section>
+</body>
+{% if anchor %}
+<script type='text/javascript'>
+$(document).ready(function(){
+    window.location = '#{{ anchor }}'
+});
+</script>
+{% endif %}
+</html>
+
+
+{% endblock %}

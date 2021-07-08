@@ -29,6 +29,20 @@ LIKE_POINTS = 1
 RETWEET_POINTS = 5
 MAX_POINTS = 150
 
+## Find the Top Tweet in the recent 7 day crawl. Save this into a json file for the front end to serve.
+## raw_data = [ids,tweets,usernames,favorites,retweets]
+def top_tweet(raw_data):
+    top_points = 0
+
+    for i in range(0,len(raw_data[0])):
+        points = min(MAX_POINTS,(TWEET_POINTS + raw_data[3][i] * LIKE_POINTS + raw_data[4][i] * RETWEET_POINTS))
+        if points > top_points and 'Defi_Eagle' != raw_data[2][i]:
+            top_points = points
+            top_tweet = {'points':points,'tweet_id':raw_data[0][i],'username':raw_data[2][i],'tweet':raw_data[1][i],'favorites':raw_data[3][i],'retweets':raw_data[4][i]}
+
+    with open(filepath + 'toptweet.json', 'w') as F:
+        F.write(json.dumps(top_tweet))
+
 ## Take in new scraped data and add it to json file
 def update_dataset(data):
     json_file =[[],[],[],[],[]]
@@ -51,7 +65,7 @@ def update_dataset(data):
             json_file[4][json_file[0].index(data[0][i])] = data[4][i]
 
 
-    with open(filepath + 'data.json', 'w') as F:
+    with open(filepath +'data.json', 'w') as F:
         F.write(json.dumps(json_file))
     return json_file
 
@@ -76,7 +90,10 @@ def main():
     for item in scoreboard:
         scoreboard[item]['ranking'] = get_rank(scoreboard[item]['points'])
 
-    total_table(scoreboard)
+    with open(filepath + 'scoreboard.json', 'w') as F:
+        F.write(json.dumps(scoreboard))
+
+    top_tweet([ids,tweets,usernames,favorites,retweets])
 
 def get_scoreboard(usernames,favorites,retweets):
     username_points = {}
@@ -100,13 +117,10 @@ def get_scoreboard(usernames,favorites,retweets):
     for key in sorted_keys:
         scoreboard[key] = username_points[key]
 
-    with open(filepath + 'backups/'+ str(DT.date.today())+'.json', 'w') as F:
-        F.write(json.dumps(scoreboard))
-
     return scoreboard
 
 def get_rank(point):
-    df = pd.read_csv(filepath + 'ranking.csv')
+    df = pd.read_csv(filepath +'ranking.csv')
     df = df[::-1]
     rankings = df['RANK'].tolist()
     points_needed = df['POINTS'].tolist()
@@ -115,65 +129,6 @@ def get_rank(point):
             if point > points_needed[i] :
                 return str(rankings[i])
     return 'Villager'
-
-def total_table(scoreboard):
-
-    start_html = """
-    <script>
-        $(window).on("load resize ", function() {
-        var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
-        $('.tbl-header').css({'padding-right':scrollWidth});
-        }).resize();
-    </script>
-    {% extends 'base.html' %}
-    {% block body %}
-    <html><head>
-    <meta charset="UTF-8">
-    </head>
-
-    <body>
-
-    <div class="container">
-    <center>
-    <img width="350px" class="pbot20" src="static/assets/OXEN_BRAND_PRIMARY.png"><br>
-    <h1 class="pbot10">Knight Scoreboard</h1>
-    <p class="scoreboard-text">Tweets with $OXEN cashtag earns you <a href="/point-system/">points</a></p></center>
-    <div class="tbl-header">
-        <table cellpadding="0" cellspacing="0" border="0">
-            <thead>
-                <th><font class="column_name">Twitter Handle</font></th>
-                <th><font class="column_name">Ranking</font></th>
-                <th><font class="column_name">Points</font></th>
-                <th><font class="column_name">Tweets</font></th>
-                <th><font class="column_name">Likes</font></th>
-                <th><font class="column_name">Retweets</font></th>
-            </thread>
-        </table>
-    </div>
-    <div class="tbl-content">
-        <table cellpadding="0" cellspacing="0" border="0">
-            <tbody>
-                <tr>
-    """
-    end_html = "</tbody></table></div></body></html>{% endblock %}"
-
-    for item in scoreboard.items():
-        if item[0] != 'Lam32938077':
-            start_html += f"""<tr>
-            <td> <a href="https://twitter.com/{item[0]}">@{item[0]}</a></th>
-            <td><img style="width:30px" src ="static/assets/{item[1]['ranking'].lower()}.svg"> {item[1]['ranking']}</th>
-            <td class="points-text">{item[1]['points']}</td>
-            <td>{item[1]['tweets']}</td>
-            <td>{item[1]['likes']}</td>
-            <td>{item[1]['retweets']}</td>
-            </tr>
-            """
-
-    start_html += end_html
-    f = open(filepath + 'scoreboard/templates/index.html','w', encoding="utf-8")
-    f.write(start_html)
-    f.close()
-
 
 main()
 

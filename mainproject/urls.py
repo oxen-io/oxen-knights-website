@@ -21,5 +21,5 @@ from scoreboard import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('scoreboard.urls')),
-    path('', views.home, name="home"),
+    url('', views.home.as_view(), name='home'),
 ]

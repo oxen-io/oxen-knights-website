@@ -14,6 +14,7 @@ def rankings(ranking):
     <center>
     <img width="350px" class="pbot20" src="../static/assets/OXEN_BRAND_PRIMARY.png"><br>
     <h1 class="pbot10">Ranking and Rewards</h1></center>
+    <center><p class='point-text'> DM <a href="https://twitter.com/Oxen_io">@Oxen_io</a> on twitter to claim your prizes.</p></center>
     <div class="tbl-header">
         <table cellpadding="0" cellspacing="0" border="0">
             <thead>

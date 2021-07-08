@@ -4,8 +4,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:fb="http://ogp.me/ns/fb#">
 <head>
+
+<meta name="twitter:site" content="@oxen_io">
+<meta name="twitter:title" content="Oxen Knights">
+<meta name="twitter:description" content="Ye can now earn thyself an honourable title and prizes for spreading the word of the Ox. The dawn of a new age is upon us.">
+<meta name="twitter:creator" content="@oxen_io">
+<meta name="twitter:image" content="https://www.oxenknights.com/static/assets/website.PNG">
 <meta property="og:title" content="Oxen Knights" />
-<meta property="og:image" content="{% static 'assets/social.PNG' %}" />
+<meta property="og:image" content="{% static 'assets/website.PNG' %}" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.oxenknights.com" />
 <meta property="og:description" content="Ye can now earn thyself an honourable title and prizes for spreading the word of the Ox. The dawn of a new age is upon us." />
@@ -24,24 +30,22 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark rounded ">
-        <a class="navbar-brand" href="{% url "home" %}"><h1><font color="white">Oxen</font><font color="#FF9F0A">Knights</font></h1></a>
+        <a class="navbar-brand" href="{% url "home" %}"><h1 class="home-logo"><font color="white">Oxen</font><font color="#12C7BA">Knights</font></h1></a>
         <div class="" id="navbarsExample09">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link menu-text" href="{% url "home" %}">Scoreboard<span class="sr-only">(current)</span></a>
+              <a class="nav-link menu-text" href="/#scoreboard">Scoreboard<span class="sr-only">(current)</span></a>
+            </li>
+                        <li class="nav-item active">
+              <a class="nav-link menu-text" href="/#point-system">Point System<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link menu-text" href="{% url "ranking-and-reward" %}">Rankings & Rewards<span class="sr-only">(current)</span></a>
+              <a class="nav-link menu-text" href="/#ranking">Rankings & Rewards<span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link menu-text" href="{% url "point-system" %}">Point System<span class="sr-only">(current)</span></a>
-            </li>
+
           </ul>
         </div>
       </nav>
-<br/>
-<br/>
-<br/>
 
 {% block body %}
 {% endblock %}

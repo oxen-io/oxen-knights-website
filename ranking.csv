@@ -1,5 +1,5 @@
-﻿RANK,POINTS,REWARD,IMG
-Peasant,0,,static/assets/peasant.svg
+RANK,POINTS,REWARD,IMG
+Villager,0,,static/assets/villager.svg
 Squire,100,,static/assets/squire.svg
 Noble,200,,static/assets/noble.svg
 Chevalier,500,,static/assets/chevalier.svg

@@ -1,40 +1,258 @@
-::-webkit-scrollbar {
-    width: 6px;
+
+@media only screen and (max-device-width : 600px) {
+.lhs{
+  min-width:100%;
+  float:none;
+}
+.rhs{
+  min-width:100%;
+  padding-left:0px!important;
+}
+h2{
+  padding-top:20px;
+}
+.lhs-knight{
+  width:20%!important;
+}
 }
 
-::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+@font-face {
+  font-family: Windsor;
+  src: url(assets/WindsorEF-UltraHeavy.otf);
 }
 
-::-webkit-scrollbar-thumb {
+@font-face {
+  font-family: Zinclair;
+  src: url(assets/Zinclair-Bold.otf);
+}
+.tbl-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.tbl-content::-webkit-scrollbar-thumb {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 }
 .scoreboard-text{
     color:black;
 }
+.point-system-section{
+
+  padding-top:20px;
+  padding-bottom:20px;
+  position:relative;
+  background-color: #1F1C47;
+  display: block;
+  overflow: auto;
+}
+
+.ranking-section{
+    min-height:70vh;
+  padding-top:20px;
+  padding-bottom:20px;
+  position:relative;
+  background-image: linear-gradient(to top right,#E27398, #484DF0);
+}
+.scoreboard-section{
+  min-height:100vh;
+  padding-top:20px;
+  padding-bottom:100px;
+  position:relative;
+  background-image: linear-gradient(to top right,#E27398, #484DF0);
+  display: block;
+  overflow: auto;
+}
+
+.point-system-text{
+  font-family:prompt;
+  padding-left:20px;
+  padding-right:20px;
+  color:#cecece;
+
+}
+.divider{
+  height:10px;
+  background-color:#12C7BA;
+}
+.lhs{
+  max-width:60%;
+  float:left;
+
+}
+.rhs{
+  width:40%;
+  float:left;
+  padding-left:40px;
+
+}
+.lhs-knight{
+  width:40%;
+  float:left;
+  padding:20px;
+}
+
+.rhs-knight{
+  width:60%;
+  float:left;
+  padding:20px 0px 20px 10px;
+}
+.knight-rank{
+  padding-top:10px;
+}
+.knight-container h3{
+  font-family:Windsor;
+  color:white;
+  font-size:30px;
+}
+
+.knight-container h4{
+  font-family:Zinclair;
+  font-size:20px;
+  color:white;
+}
+.knight-container{
+  background-color:rgba(255, 255, 255, 0.2);
+  min-width:100%;
+  padding:10px;
+  margin-bottom:20px;
+  border-radius:20px;
+  overflow: hidden;
+}
+
+.top-tweet-container{
+  background-color:rgba(255, 255, 255, 0.2);
+  min-width:100%;
+  padding:20px;
+  margin-bottom:20px;
+  border-radius:20px;
+  overflow: hidden;
+  font-family:prompt;
+}
+
+.container{
+
+  vertical-align:middle;
+}
 .point-text{
     margin-bottom:40px;
     width:75%;
-    color:black;
+    font-weight:400;
+    font-family:Prompt;
+    color:#CECECE;
 }
 
-th{
+.rank1{
+  float:left;
+  width:20%;
+  padding:20px;
+}
+.bar{
+    float:left;
+  width:60%;
+}
+.rank2{
+    float:left;
+  width:20%;
+  padding:20px;
+}
+.progress-section{
+  display:flex;
+}
+
+.progress-percent{
+  text-align: right;
+  padding-right:10px;
+}
+.check-rank-button{
+  background-color: #12C7BA;
+  box-shadow: 2px 2px 1px 1px rgb(0 0 0 / 30%);
+  border-radius:10px;
+  width:25%;
+  border:0px;
+  margin-left:10px;
+}
+
+.check-rank-button:hover{
+  background-color:#FF9F0A;
+  border-radius:10px;
+  width:25%;
+  border:0px;
+}
+
+#id_text{
+  background-color:white;
+  border-color:#11112B;
+  border-radius:20px;
+  color:black;
+  width:50%;
+  padding-left:10px;
+}
+.top-tweet-text{
+  font-size:18px;
+  line-height: 1.2;
+  margin-bottom:5px;
+
+}
+.top-tweet-text a{
+  color:black;
+}
+
+.current-points{
+  margin:0;
+  font-size:40px;
+  color:#C3F53A;
+  font-family: Windsor;
+}
+.needed-points{
+  font-size:22px;
+  color:#CECECE;
+  font-family: Zinclair;
+}
+
+.progress-bar1{
+  background-color:#11112B;
+    border-radius:20px;
+    border:10px;
+    border-color:black;
+    box-shadow: 2px 2px 1px 1px rgb(0 0 0 / 30%);
+}
+.progress1{
+  background-color: #12C7BA;
+  border-radius:20px;
+}
+
+.input-text{
+  padding-top:20px;
+}
+
+
+.rank-text{
+  padding-top:10px;
+  color:#CECECE;
+  font-family: Zinclair;
+  font-size:22px;
+}
+.home-logo{
+  font-family: 'Cinzel Decorative', cursive!important;
+  font-weight:600;
+  font-size:40px;
+}
+th {
   padding: 20px 15px;
   text-align: center;
-  font-weight: 500;
   color: white;
   text-transform: uppercase;
   overflow: hidden;
 }
 
-td{
+td {
   padding: 15px;
   text-align: center;
   vertical-align:middle;
-  font-weight: 300;
-  color: black;
+  color: white;
   border-bottom: solid 1px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  font-family:Prompt;
+  font-weight:600;
 }
 
 table{
@@ -43,33 +261,49 @@ table{
 }
 
 h1 {
-  font-size:40px;
-  font-family: 'Cinzel Decorative', cursive;
-  font-weight:700;
+  font-size:52px;
+  font-family: Windsor;
+  font-weight:200;
+  color:white;
 }
 
 h2 {
-  font-family: 'Cinzel Decorative', cursive;
+  font-family: Windsor;
+  color:white;
+  font-size:42px;
 }
 
 h3 {
-  font-family: Prompt;
-  color:#FF9F0A;
+  font-family: Windsor;
+  font-size:25px;
+  color:#DBF7F5;
 }
 
+h4{
+    font-family: Windsor;
+  font-size:20px;
+  color:#DBF7F5;
+}
 body{
-  background-color:#DBF7F5;
-  padding-bottom:200px
+  background-color:#1F1C47;
+  font-family: Zinclair;
 }
 
 p {
     color: white;
 }
 
+a{
+  color:white;
+}
+
 a:hover{
     color:#FF9F0A!important;
 }
 
+.handle-text{
+  width:150px;
+}
 .navbar{
   background-color:#1E1D48!important;
 }
@@ -80,8 +314,10 @@ a:hover{
 
 .points-text{
     font-size:20px;
-    color:#FF9F0A;
+    width:100px;
+    color:#C3F53A;
     font-weight:600;
+    font-family:Prompt;
 }
 
 .left{
@@ -116,19 +352,35 @@ a:hover{
 
 .tbl-header{
   font-family:Prompt ;
-  background-color: #1E1D48!important;
+  background-color:rgba(255, 255, 255, 0.2);
+  border-radius:20px 20px 0 0 ;
+
+  border-bottom: 1px solid white;
+
  }
 
 .tbl-content{
   font-family:Work Sans;
-  height:55vh;
+  background-color:rgba(255, 255, 255, 0.2);
+  height:50vh;
   overflow-x:auto;
   margin-top: 0px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius:0 0 20px 20px ;
 }
 
-.handle {
+.tbl-content1{
   font-family:Work Sans;
+  background-color:rgba(255, 255, 255, 0.2);
+  overflow-x:auto;
+  margin-top: 0px;
+  border-radius:0 0 20px 20px ;
+}
+
+.handle{
+  color:#12C7BA;
+  font-size:50px;
+  font-family: Zinclair;
+  margin:0;
   text-align: center;
 }
 
