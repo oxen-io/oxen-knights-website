@@ -21,19 +21,17 @@ search_term = "$oxen -filter:retweets"
 filepath = "/home/modeify/oxen-knight/"
 raw_data = tw.Cursor(api.search,
                    q=search_term,
-                   lang="en",
                    since=str(DT.date.today()- DT.timedelta(days=7))).items(5000)
-
+print(raw_data)
 TWEET_POINTS = 10
 LIKE_POINTS = 1
 RETWEET_POINTS = 5
 MAX_POINTS = 150
 
-## Find the Top Tweet in the recent 7 day crawl. Save this into a json file for the front end to serve.
-## raw_data = [ids,tweets,usernames,favorites,retweets]
 def top_tweet(raw_data):
     top_points = 0
 
+    print(len(raw_data[0]))
     for i in range(0,len(raw_data[0])):
         points = min(MAX_POINTS,(TWEET_POINTS + raw_data[3][i] * LIKE_POINTS + raw_data[4][i] * RETWEET_POINTS))
         if points > top_points and 'Defi_Eagle' != raw_data[2][i]:
@@ -42,6 +40,7 @@ def top_tweet(raw_data):
 
     with open(filepath + 'toptweet.json', 'w') as F:
         F.write(json.dumps(top_tweet))
+#'points':min(MAX_POINTS,(TWEET_POINTS + favorites[i] * LIKE_POINTS + retweets[i] * RETWEET_POINTS))}
 
 ## Take in new scraped data and add it to json file
 def update_dataset(data):
@@ -75,24 +74,21 @@ def main():
     usernames = []
     favorites = []
     retweets = []
-
     for tweet in raw_data:
         if tweet.user.screen_name != 'Oxen_io':
+
             ids.append(tweet.id)
             tweets.append(tweet.text)
             favorites.append(tweet.favorite_count)
             retweets.append(tweet.retweet_count)
             usernames.append(tweet.user.screen_name)
-
     total_dataset = update_dataset([ids,usernames,tweets,favorites,retweets])
     scoreboard = get_scoreboard(total_dataset[1],total_dataset[3],total_dataset[4])
 
     for item in scoreboard:
         scoreboard[item]['ranking'] = get_rank(scoreboard[item]['points'])
-
     with open(filepath + 'scoreboard.json', 'w') as F:
         F.write(json.dumps(scoreboard))
-
     top_tweet([ids,tweets,usernames,favorites,retweets])
 
 def get_scoreboard(usernames,favorites,retweets):
@@ -129,6 +125,8 @@ def get_rank(point):
             if point > points_needed[i] :
                 return str(rankings[i])
     return 'Villager'
+
+
 
 main()
 

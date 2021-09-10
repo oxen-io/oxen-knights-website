@@ -133,8 +133,27 @@
                 </table>
             </div>
         </div>
-        <div class="rhs">
+               <div class="rhs">
             <div class="top-knight">
+                {%if points %}
+                <h2>Your Stats</h2>
+                <div class="knight-container">
+                    <div class="lhs-knight">
+                    <center>
+                        <img src="static/assets/{{ranking}}.svg">
+                        <h4 class="knight-rank">{{ranking}}</h4>
+                    </center>
+                    </div>
+                    <div class="rhs-knight">
+                        <h3>{{handle}}</h3>
+
+                        <h4>TWEETS: <font color="#12C7BA">{{tweets}}</font></h4>
+                        <h4>RETWEETS: <font color="#12C7BA">{{retweets}}</font></h4>
+                        <h4>LIKES: <font color="#12C7BA">{{likes}}</font></h4>
+                        <h4>POINTS: <font color="#12C7BA">{{points}}</font></h4>
+                    </div>
+                </div>
+                {%else%}
                 <h2>Top Knight</h2>
                 <div class="knight-container">
                     <div class="lhs-knight">
@@ -146,24 +165,24 @@
                     <div class="rhs-knight">
                         <h3>{{top_knight}}</h3>
 
-                        <h4>Tweets: <font color="#C3F53A">{{top_knight_values.tweets}}</font></h4>
-                        <h4>Retweets: <font color="#C3F53A">{{top_knight_values.retweets}}</font></h4>
-                        <h4>Likes: <font color="#C3F53A">{{top_knight_values.likes}}</font></h4>
+                        <h4>TWEETS: <font color="#12C7BA">{{top_knight_values.tweets}}</font></h4>
+                        <h4>RETWEETS: <font color="#12C7BA">{{top_knight_values.retweets}}</font></h4>
+                        <h4>LIKES: <font color="#12C7BA">{{top_knight_values.likes}}</font></h4>
                     </div>
                 </div>
+                {%endif%}
                 <h2>Tweet of the week</h2>
                 <div class="top-tweet-container">
-                    <h3 class="top_tweet_username"><a href="https://twitter.com/{{top_tweet.username}}">@{{top_tweet.username}} </a>| Points: <font color="#C3F53A">{{top_tweet.points}}</font></h3>
+                    <h3 class="top_tweet_username"><a href="https://twitter.com/{{top_tweet.username}}">@{{top_tweet.username}} </a>| Points: <font color="#12C7BA">{{top_tweet.points}}</font></h3>
                     <p class="top-tweet-text"><a href="https://twitter.com/{{top_tweet.username}}/status/{{top_tweet.tweet_id}}">{{top_tweet.tweet}}</a></p>
-                    <p class="likes-retweets"> <font color="#cecece"></font> <img style="width:20px" src="/static/assets/heart.svg"> <font color="#cecece">{{top_tweet.favorites}}    </font>     <img style="width:25px" src="/static/assets/retweet.svg"> <font color="#cecece">{{top_tweet.retweets}}</font>
+                    <p class="likes-retweets"> <font color="#cecece"></font> <img style="width:20px" src="/static/assets/like.png"> <font color="#cecece">{{top_tweet.favorites}}    </font>     <img style="width:25px" src="/static/assets/retweet.png"> <font color="#cecece">{{top_tweet.retweets}}</font>
 
                 </div>
             </div>
         </div>
     </div>
 </section>
-<section class="divider">
-</section>
+
 <a name="point-system"></a>
 <section class="point-system-section">
     <div class="container">
@@ -175,7 +194,7 @@
             Oxen themselves can award or deduct points from any knight, for any reason. Stay loyal to the cause.
             </p>
         <div class="left">
-            <img class="pbot20 small" src="../static/assets/tweet.svg"><br>
+            <img class="pbot20 small" src="../static/assets/tweet_fix.png"><br>
             <h2>Tweets</h2>
             <h3>10 Points</h3>
         <p class="point-system-text">
@@ -183,7 +202,7 @@
         </p>
         </div>
         <div class="middle">
-            <img class="pbot20 small" src="../static/assets/retweet.svg"><br>
+            <img class="pbot20 small" src="../static/assets/retweet.png"><br>
             <h2>Retweets</h2>
             <h3>5 Points</h3>
             <p class="point-system-text">
@@ -191,7 +210,7 @@
         </p>
         </div>
         <div class="right">
-            <img class="pbot20 small" src="../static/assets/heart.svg"><br>
+            <img class="pbot20 small" src="../static/assets/like.png"><br>
             <h2>Likes</h2>
             <h3>1 Points</h3>
             <p class="point-system-text">
@@ -201,8 +220,7 @@
         </center>
     </div>
 </section>
-<section class="divider">
-</section>
+
 <a name="ranking"></a>
 <section class="ranking-section">
 

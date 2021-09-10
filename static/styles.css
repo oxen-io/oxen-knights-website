@@ -25,6 +25,16 @@ h2{
   font-family: Zinclair;
   src: url(assets/Zinclair-Bold.otf);
 }
+
+@font-face {
+  font-family: Camingo;
+  src: url(assets/CamingoCode-Bold.ttf);
+}
+@font-face {
+  font-family: Roboto;
+  src: url(assets/Roboto-Light.ttf);
+}
+
 .tbl-content::-webkit-scrollbar {
     width: 10px;
 }
@@ -36,34 +46,34 @@ h2{
     color:black;
 }
 .point-system-section{
-
   padding-top:20px;
   padding-bottom:20px;
   position:relative;
-  background-color: #1F1C47;
+  background-color: #10101a;
   display: block;
   overflow: auto;
 }
 
 .ranking-section{
-    min-height:70vh;
+  min-height:70vh;
   padding-top:20px;
   padding-bottom:20px;
   position:relative;
-  background-image: linear-gradient(to top right,#E27398, #484DF0);
+  background-color:#0b0b11;
 }
 .scoreboard-section{
   min-height:100vh;
   padding-top:20px;
   padding-bottom:100px;
   position:relative;
-  background-image: linear-gradient(to top right,#E27398, #484DF0);
+  background: url("/static/assets/Artboard_1.png") no-repeat center bottom fixed;
+  background-size: 100% 100%;
   display: block;
   overflow: auto;
 }
 
 .point-system-text{
-  font-family:prompt;
+  font-family:Roboto;
   padding-left:20px;
   padding-right:20px;
   color:#cecece;
@@ -87,7 +97,7 @@ h2{
 .lhs-knight{
   width:40%;
   float:left;
-  padding:20px;
+  padding:10px;
 }
 
 .rhs-knight{
@@ -97,20 +107,22 @@ h2{
 }
 .knight-rank{
   padding-top:10px;
+  font-size: 16px!important;
 }
 .knight-container h3{
-  font-family:Windsor;
+  font-family:Camingo;
   color:white;
-  font-size:30px;
+  font-size:28px;
 }
 
 .knight-container h4{
-  font-family:Zinclair;
+  font-family:Camingo;
   font-size:20px;
   color:white;
 }
 .knight-container{
   background-color:rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
   min-width:100%;
   padding:10px;
   margin-bottom:20px;
@@ -120,12 +132,13 @@ h2{
 
 .top-tweet-container{
   background-color:rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
   min-width:100%;
   padding:20px;
   margin-bottom:20px;
   border-radius:20px;
   overflow: hidden;
-  font-family:prompt;
+  font-family:Roboto;
 }
 
 .container{
@@ -136,7 +149,7 @@ h2{
     margin-bottom:40px;
     width:75%;
     font-weight:400;
-    font-family:Prompt;
+    font-family:Roboto;
     color:#CECECE;
 }
 
@@ -156,6 +169,8 @@ h2{
 }
 .progress-section{
   display:flex;
+  padding-bottom: 50px;
+  padding-top: 50px;
 }
 
 .progress-percent{
@@ -169,22 +184,32 @@ h2{
   width:25%;
   border:0px;
   margin-left:10px;
+
+
+    outline:none;
+    border-color:#12C7BA;
+    box-shadow:0 0 10px #12C7BA;
 }
 
 .check-rank-button:hover{
-  background-color:#FF9F0A;
+  background-color:#232A39;
   border-radius:10px;
+  color: white;
   width:25%;
   border:0px;
 }
 
 #id_text{
-  background-color:white;
+  background-color:#232A39;
   border-color:#11112B;
   border-radius:20px;
-  color:black;
+  color:white;
   width:50%;
   padding-left:10px;
+
+    outline:none;
+    border-color:#12C7BA;
+    box-shadow:0 0 10px #12C7BA;
 }
 .top-tweet-text{
   font-size:18px;
@@ -193,27 +218,25 @@ h2{
 
 }
 .top-tweet-text a{
-  color:black;
+  color:white;
 }
 
 .current-points{
   margin:0;
   font-size:40px;
-  color:#C3F53A;
-  font-family: Windsor;
+  color:white;
+  font-family: Camingo;
 }
 .needed-points{
   font-size:22px;
   color:#CECECE;
-  font-family: Zinclair;
+  font-family: Camingo;
 }
 
 .progress-bar1{
   background-color:#11112B;
     border-radius:20px;
-    border:10px;
-    border-color:black;
-    box-shadow: 2px 2px 1px 1px rgb(0 0 0 / 30%);
+    border: 2px solid #12C7BA;
 }
 .progress1{
   background-color: #12C7BA;
@@ -228,7 +251,7 @@ h2{
 .rank-text{
   padding-top:10px;
   color:#CECECE;
-  font-family: Zinclair;
+  font-family: Roboto;
   font-size:22px;
 }
 .home-logo{
@@ -245,13 +268,13 @@ th {
 }
 
 td {
-  padding: 15px;
+  padding: 8px 0px 8px 0px;
   text-align: center;
   vertical-align:middle;
   color: white;
   border-bottom: solid 1px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  font-family:Prompt;
+  font-family:Roboto;
   font-weight:600;
 }
 
@@ -260,33 +283,34 @@ table{
   table-layout: fixed;
 }
 
+
 h1 {
   font-size:52px;
-  font-family: Windsor;
+  font-family: Camingo;
   font-weight:200;
   color:white;
 }
 
 h2 {
-  font-family: Windsor;
+  font-family: Camingo;
   color:white;
   font-size:42px;
 }
 
 h3 {
-  font-family: Windsor;
+  font-family: Camingo;
   font-size:25px;
   color:#DBF7F5;
 }
 
 h4{
-    font-family: Windsor;
+    font-family: Camingo;
   font-size:20px;
   color:#DBF7F5;
 }
 body{
-  background-color:#1F1C47;
-  font-family: Zinclair;
+  background-color:#110C0A;
+  font-family: Roboto;
 }
 
 p {
@@ -298,26 +322,35 @@ a{
 }
 
 a:hover{
-    color:#FF9F0A!important;
+    color:#12C7BA!important;
 }
 
 .handle-text{
   width:150px;
 }
+
+.menubar09{
+    background-color:#110C0A;
+}
+
+#navbarsExample09{
+    margin-left: auto;
+    margin-right: 0;
+}
 .navbar{
-  background-color:#1E1D48!important;
+  background-color:#110C0A!important;
 }
 
 .menu-text{
-    font-family:Prompt;
+    font-family:Roboto;
  }
 
 .points-text{
     font-size:20px;
     width:100px;
-    color:#C3F53A;
+    color:#12C7BA;
     font-weight:600;
-    font-family:Prompt;
+    font-family:Roboto;
 }
 
 .left{
@@ -351,8 +384,9 @@ a:hover{
 }
 
 .tbl-header{
-  font-family:Prompt ;
+  font-family:Camingo ;
   background-color:rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
   border-radius:20px 20px 0 0 ;
 
   border-bottom: 1px solid white;
@@ -360,17 +394,19 @@ a:hover{
  }
 
 .tbl-content{
-  font-family:Work Sans;
+  font-family:Roboto;
   background-color:rgba(255, 255, 255, 0.2);
-  height:50vh;
+  backdrop-filter: blur(5px);
+  height:45vh;
   overflow-x:auto;
   margin-top: 0px;
   border-radius:0 0 20px 20px ;
 }
 
 .tbl-content1{
-  font-family:Work Sans;
+  font-family:Roboto;
   background-color:rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
   overflow-x:auto;
   margin-top: 0px;
   border-radius:0 0 20px 20px ;
@@ -379,17 +415,17 @@ a:hover{
 .handle{
   color:#12C7BA;
   font-size:50px;
-  font-family: Zinclair;
+  font-family: Camingo;
   margin:0;
   text-align: center;
 }
 
 .rewards{
-  font-family:Prompt
+  font-family:Camingo;
 }
 
 .points{
-  font-family:Prompt
+  font-family:Camingo;
 }
 
 .pbot20{

@@ -1,0 +1,1101 @@
+
+    <script>
+    $(window).on("load resize ", function() {
+  var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+  $('.tbl-header').css({'padding-right':scrollWidth});
+}).resize();
+</script>
+    {% extends 'base.html' %}
+    {% block body %}
+    <html><head>
+    <meta charset="UTF-8">
+    </head>
+
+    <body>
+
+    <div class="container">
+    <center>
+    <img width="350px" class="pbot20" src="static/assets/OXEN_BRAND_PRIMARY.png"><br>
+    <h1 class="pbot10">Knight Scoreboard</h1>
+    <p class="scoreboard-text">Tweets with $OXEN cashtag earns you <a href="/point-system/">points</a></p></center>
+    <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+                <th><font class="column_name">Twitter Handle</font></th>
+                <th><font class="column_name">Ranking</font></th>
+                <th><font class="column_name">Points</font></th>
+                <th><font class="column_name">Tweets</font></th>
+                <th><font class="column_name">Likes</font></th>
+                <th><font class="column_name">Retweets</font></th>
+            </thread>
+        </table>
+    </div>
+    <div class="tbl-content">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+                <tr>
+    <tr>
+            <td> <a href="https://twitter.com/CryptoTrueLife">@CryptoTrueLife</a></th>
+            <td><img style="width:30px" src ="static/assets/noble knight.svg"> Noble Knight</th>
+            <td class="points-text">2673</td>
+            <td>61</td>
+            <td>768</td>
+            <td>259</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/coinhero_1">@coinhero_1</a></th>
+            <td><img style="width:30px" src ="static/assets/officer knight.svg"> Officer Knight</th>
+            <td class="points-text">1718</td>
+            <td>53</td>
+            <td>658</td>
+            <td>106</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/FritzWG">@FritzWG</a></th>
+            <td><img style="width:30px" src ="static/assets/knight.svg"> Knight</th>
+            <td class="points-text">1175</td>
+            <td>60</td>
+            <td>285</td>
+            <td>58</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/cybertruck420">@cybertruck420</a></th>
+            <td><img style="width:30px" src ="static/assets/knight.svg"> Knight</th>
+            <td class="points-text">1161</td>
+            <td>63</td>
+            <td>341</td>
+            <td>38</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/CryptoFirefly">@CryptoFirefly</a></th>
+            <td><img style="width:30px" src ="static/assets/knight.svg"> Knight</th>
+            <td class="points-text">1078</td>
+            <td>68</td>
+            <td>288</td>
+            <td>22</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/therealsc0t">@therealsc0t</a></th>
+            <td><img style="width:30px" src ="static/assets/chevalier.svg"> Chevalier</th>
+            <td class="points-text">675</td>
+            <td>48</td>
+            <td>175</td>
+            <td>4</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/Konigsmann">@Konigsmann</a></th>
+            <td><img style="width:30px" src ="static/assets/chevalier.svg"> Chevalier</th>
+            <td class="points-text">590</td>
+            <td>41</td>
+            <td>140</td>
+            <td>8</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/thedogflip">@thedogflip</a></th>
+            <td><img style="width:30px" src ="static/assets/noble.svg"> Noble</th>
+            <td class="points-text">432</td>
+            <td>26</td>
+            <td>127</td>
+            <td>9</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/Randomopini0n">@Randomopini0n</a></th>
+            <td><img style="width:30px" src ="static/assets/noble.svg"> Noble</th>
+            <td class="points-text">377</td>
+            <td>28</td>
+            <td>72</td>
+            <td>5</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/CryptoYagami">@CryptoYagami</a></th>
+            <td><img style="width:30px" src ="static/assets/noble.svg"> Noble</th>
+            <td class="points-text">328</td>
+            <td>17</td>
+            <td>63</td>
+            <td>19</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/huyahuai">@huyahuai</a></th>
+            <td><img style="width:30px" src ="static/assets/noble.svg"> Noble</th>
+            <td class="points-text">295</td>
+            <td>24</td>
+            <td>55</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/Jeroen17103137">@Jeroen17103137</a></th>
+            <td><img style="width:30px" src ="static/assets/noble.svg"> Noble</th>
+            <td class="points-text">270</td>
+            <td>14</td>
+            <td>70</td>
+            <td>12</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/CryptoChieftan">@CryptoChieftan</a></th>
+            <td><img style="width:30px" src ="static/assets/noble.svg"> Noble</th>
+            <td class="points-text">267</td>
+            <td>16</td>
+            <td>92</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/_g0x_">@_g0x_</a></th>
+            <td><img style="width:30px" src ="static/assets/noble.svg"> Noble</th>
+            <td class="points-text">262</td>
+            <td>13</td>
+            <td>87</td>
+            <td>9</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/REAL_BIG_POOH">@REAL_BIG_POOH</a></th>
+            <td><img style="width:30px" src ="static/assets/noble.svg"> Noble</th>
+            <td class="points-text">255</td>
+            <td>15</td>
+            <td>75</td>
+            <td>6</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/2crookedpinkies">@2crookedpinkies</a></th>
+            <td><img style="width:30px" src ="static/assets/squire.svg"> Squire</th>
+            <td class="points-text">152</td>
+            <td>12</td>
+            <td>32</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/Defi_Eagle">@Defi_Eagle</a></th>
+            <td><img style="width:30px" src ="static/assets/squire.svg"> Squire</th>
+            <td class="points-text">150</td>
+            <td>1</td>
+            <td>85</td>
+            <td>85</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/Job4_2">@Job4_2</a></th>
+            <td><img style="width:30px" src ="static/assets/squire.svg"> Squire</th>
+            <td class="points-text">129</td>
+            <td>1</td>
+            <td>74</td>
+            <td>9</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/tldr_crypto">@tldr_crypto</a></th>
+            <td><img style="width:30px" src ="static/assets/squire.svg"> Squire</th>
+            <td class="points-text">126</td>
+            <td>11</td>
+            <td>16</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/HC_researcher">@HC_researcher</a></th>
+            <td><img style="width:30px" src ="static/assets/squire.svg"> Squire</th>
+            <td class="points-text">115</td>
+            <td>1</td>
+            <td>40</td>
+            <td>13</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/CoinRankApp">@CoinRankApp</a></th>
+            <td><img style="width:30px" src ="static/assets/squire.svg"> Squire</th>
+            <td class="points-text">104</td>
+            <td>4</td>
+            <td>29</td>
+            <td>7</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/CryptoMonhi">@CryptoMonhi</a></th>
+            <td><img style="width:30px" src ="static/assets/squire.svg"> Squire</th>
+            <td class="points-text">102</td>
+            <td>7</td>
+            <td>27</td>
+            <td>1</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/CryptoFeed_">@CryptoFeed_</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">91</td>
+            <td>4</td>
+            <td>21</td>
+            <td>6</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/woodlandnrose">@woodlandnrose</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">91</td>
+            <td>4</td>
+            <td>21</td>
+            <td>6</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/Cottoncandycat">@Cottoncandycat</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">82</td>
+            <td>6</td>
+            <td>22</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/loki_the_ox">@loki_the_ox</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">82</td>
+            <td>2</td>
+            <td>37</td>
+            <td>5</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/CLOUD_STR1FE">@CLOUD_STR1FE</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">80</td>
+            <td>5</td>
+            <td>25</td>
+            <td>1</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/PCrosschain">@PCrosschain</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">76</td>
+            <td>6</td>
+            <td>16</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/CryptoCrashCom">@CryptoCrashCom</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">74</td>
+            <td>4</td>
+            <td>14</td>
+            <td>4</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/DTDaun">@DTDaun</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">73</td>
+            <td>5</td>
+            <td>18</td>
+            <td>1</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/JefferysKee">@JefferysKee</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">71</td>
+            <td>1</td>
+            <td>26</td>
+            <td>7</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/jps200010">@jps200010</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">70</td>
+            <td>4</td>
+            <td>10</td>
+            <td>4</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/dis7ant">@dis7ant</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">68</td>
+            <td>3</td>
+            <td>28</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/NeimoNeimon">@NeimoNeimon</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">66</td>
+            <td>5</td>
+            <td>16</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/FiboSwanny">@FiboSwanny</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">60</td>
+            <td>2</td>
+            <td>25</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/tnewman46394617">@tnewman46394617</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">54</td>
+            <td>3</td>
+            <td>14</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/phantastry">@phantastry</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">53</td>
+            <td>4</td>
+            <td>13</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/denzelspaceman">@denzelspaceman</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">52</td>
+            <td>3</td>
+            <td>12</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/dynochrist">@dynochrist</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">48</td>
+            <td>1</td>
+            <td>13</td>
+            <td>5</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/huxley_peckham">@huxley_peckham</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">43</td>
+            <td>3</td>
+            <td>8</td>
+            <td>1</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/TheCryptoCobra">@TheCryptoCobra</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">42</td>
+            <td>3</td>
+            <td>2</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/documentingoxen">@documentingoxen</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">40</td>
+            <td>3</td>
+            <td>5</td>
+            <td>1</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/ludwigvonhaven">@ludwigvonhaven</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">40</td>
+            <td>2</td>
+            <td>20</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/inputspike">@inputspike</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">39</td>
+            <td>3</td>
+            <td>4</td>
+            <td>1</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/alertstothemoon">@alertstothemoon</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">38</td>
+            <td>3</td>
+            <td>8</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/PoisonXhv">@PoisonXhv</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">38</td>
+            <td>1</td>
+            <td>13</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/crypsino">@crypsino</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">37</td>
+            <td>1</td>
+            <td>7</td>
+            <td>4</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/Big_Bad_Bobbo">@Big_Bad_Bobbo</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">36</td>
+            <td>3</td>
+            <td>6</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/xtroleum">@xtroleum</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">36</td>
+            <td>3</td>
+            <td>6</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/natedagger">@natedagger</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">31</td>
+            <td>2</td>
+            <td>11</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/CoinTrendz">@CoinTrendz</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">28</td>
+            <td>1</td>
+            <td>13</td>
+            <td>1</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/OlyaCrypto">@OlyaCrypto</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">27</td>
+            <td>2</td>
+            <td>7</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/WAGMIcapital">@WAGMIcapital</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">26</td>
+            <td>2</td>
+            <td>6</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/THORmaximalist">@THORmaximalist</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">26</td>
+            <td>1</td>
+            <td>6</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/JimsHodling">@JimsHodling</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">25</td>
+            <td>2</td>
+            <td>5</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/lungdoge">@lungdoge</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">25</td>
+            <td>2</td>
+            <td>5</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/ChadAintBad">@ChadAintBad</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">24</td>
+            <td>2</td>
+            <td>4</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/vittornio">@vittornio</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">24</td>
+            <td>2</td>
+            <td>4</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/Zebrov75Valera">@Zebrov75Valera</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">24</td>
+            <td>2</td>
+            <td>4</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/Bitosher">@Bitosher</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">24</td>
+            <td>1</td>
+            <td>4</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/CSorsselsson">@CSorsselsson</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">23</td>
+            <td>2</td>
+            <td>3</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/tinex_xxxxxxx">@tinex_xxxxxxx</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">23</td>
+            <td>2</td>
+            <td>3</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/CryptoStonksBot">@CryptoStonksBot</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">22</td>
+            <td>1</td>
+            <td>7</td>
+            <td>1</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/Putra_Shot">@Putra_Shot</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">21</td>
+            <td>1</td>
+            <td>6</td>
+            <td>1</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/THORshadowd">@THORshadowd</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">21</td>
+            <td>1</td>
+            <td>6</td>
+            <td>1</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/DCA_Cryptoz">@DCA_Cryptoz</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">21</td>
+            <td>1</td>
+            <td>11</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/Sonya_BladeBer">@Sonya_BladeBer</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">21</td>
+            <td>1</td>
+            <td>11</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/invinciblejayce">@invinciblejayce</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">20</td>
+            <td>1</td>
+            <td>5</td>
+            <td>1</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/nobuo1520">@nobuo1520</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">19</td>
+            <td>1</td>
+            <td>4</td>
+            <td>1</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/ExwhereAngel3">@ExwhereAngel3</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">18</td>
+            <td>1</td>
+            <td>3</td>
+            <td>1</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/RescQ12">@RescQ12</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">18</td>
+            <td>1</td>
+            <td>3</td>
+            <td>1</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/DavezUniverse">@DavezUniverse</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">17</td>
+            <td>1</td>
+            <td>7</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/Etherealcrypto1">@Etherealcrypto1</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">17</td>
+            <td>1</td>
+            <td>2</td>
+            <td>1</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/JanetWintsbit">@JanetWintsbit</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">17</td>
+            <td>1</td>
+            <td>7</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/KryptoAZ">@KryptoAZ</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">15</td>
+            <td>1</td>
+            <td>5</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/BradSte20111128">@BradSte20111128</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">15</td>
+            <td>1</td>
+            <td>5</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/kOEkOkO">@kOEkOkO</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">15</td>
+            <td>1</td>
+            <td>5</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/mehowbrains">@mehowbrains</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">15</td>
+            <td>1</td>
+            <td>5</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/k4z1m1r_">@k4z1m1r_</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">15</td>
+            <td>1</td>
+            <td>5</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/CryptoMatic21">@CryptoMatic21</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">14</td>
+            <td>1</td>
+            <td>4</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/eutectix1">@eutectix1</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">14</td>
+            <td>1</td>
+            <td>4</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/onetricky_pony">@onetricky_pony</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">14</td>
+            <td>1</td>
+            <td>4</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/OGbencozzy">@OGbencozzy</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">14</td>
+            <td>1</td>
+            <td>4</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/CLandries">@CLandries</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">14</td>
+            <td>1</td>
+            <td>4</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/blindyxxx">@blindyxxx</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">14</td>
+            <td>1</td>
+            <td>4</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/TheCoinAddict13">@TheCoinAddict13</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">14</td>
+            <td>1</td>
+            <td>4</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/cchamst">@cchamst</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">13</td>
+            <td>1</td>
+            <td>3</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/MaryAprilAlfor1">@MaryAprilAlfor1</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">13</td>
+            <td>1</td>
+            <td>3</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/BitStern">@BitStern</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">13</td>
+            <td>1</td>
+            <td>3</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/0xGoblin">@0xGoblin</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">13</td>
+            <td>1</td>
+            <td>3</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/mschoenebeck1">@mschoenebeck1</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">12</td>
+            <td>1</td>
+            <td>2</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/wearecryptoarmy">@wearecryptoarmy</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">12</td>
+            <td>1</td>
+            <td>2</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/mikekelly85">@mikekelly85</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">12</td>
+            <td>1</td>
+            <td>2</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/foodmasku">@foodmasku</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">12</td>
+            <td>1</td>
+            <td>2</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/NoTableNoFun">@NoTableNoFun</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">12</td>
+            <td>1</td>
+            <td>2</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/cksxxbe">@cksxxbe</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">12</td>
+            <td>1</td>
+            <td>2</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/cripto28679688">@cripto28679688</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">12</td>
+            <td>1</td>
+            <td>2</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/Aakash55308803">@Aakash55308803</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">12</td>
+            <td>1</td>
+            <td>2</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/Lady01177">@Lady01177</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">12</td>
+            <td>1</td>
+            <td>2</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/gladys10151994">@gladys10151994</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">12</td>
+            <td>1</td>
+            <td>2</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/Parkchim100813">@Parkchim100813</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">12</td>
+            <td>1</td>
+            <td>2</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/bolanzky25">@bolanzky25</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">12</td>
+            <td>1</td>
+            <td>2</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/DLT_Expert">@DLT_Expert</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">12</td>
+            <td>1</td>
+            <td>2</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/digitalproj3cts">@digitalproj3cts</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">12</td>
+            <td>1</td>
+            <td>2</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/honeach">@honeach</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">12</td>
+            <td>1</td>
+            <td>2</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/shruti25062435">@shruti25062435</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">12</td>
+            <td>1</td>
+            <td>2</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/CryptoCh0pp3r">@CryptoCh0pp3r</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">12</td>
+            <td>1</td>
+            <td>2</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/korzhakov">@korzhakov</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">11</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/5_5NoField5">@5_5NoField5</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">11</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/neilyamit">@neilyamit</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">11</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/oppoone2015">@oppoone2015</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">11</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/crypto_grape">@crypto_grape</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">11</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/sarahferguson">@sarahferguson</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">11</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/HeyMaiaaa14">@HeyMaiaaa14</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">11</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/HNSDOMAINS">@HNSDOMAINS</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">11</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/Manizhubaby">@Manizhubaby</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">11</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/fatruicom">@fatruicom</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">11</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/younix">@younix</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">11</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/gluiscastillom">@gluiscastillom</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">11</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/kxthrinee">@kxthrinee</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">11</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/jillson_avlz">@jillson_avlz</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">11</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/digitalworldvl1">@digitalworldvl1</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">11</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/strwbrryjamy">@strwbrryjamy</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">11</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/LendayB">@LendayB</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">11</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/haidzsophia">@haidzsophia</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">11</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/lebirambalolot">@lebirambalolot</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">11</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/trenendev">@trenendev</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">11</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/BeauxJacques1">@BeauxJacques1</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">11</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/enter_chainflip">@enter_chainflip</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">11</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/MikeBMWS1000r">@MikeBMWS1000r</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">10</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/david_b_79">@david_b_79</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">10</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/Gregoir35081964">@Gregoir35081964</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">10</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            </tr>
+            <tr>
+            <td> <a href="https://twitter.com/charliebanks__">@charliebanks__</a></th>
+            <td><img style="width:30px" src ="static/assets/villager.svg"> Villager</th>
+            <td class="points-text">10</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            </tr>
+            </tbody></table></div></body></html>{% endblock %}

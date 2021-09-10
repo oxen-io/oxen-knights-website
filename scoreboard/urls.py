@@ -18,4 +18,5 @@ from django.contrib import admin
 from scoreboard import views
 
 urlpatterns = [
+
 ]
