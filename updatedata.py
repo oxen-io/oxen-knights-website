@@ -7,18 +7,22 @@ import pandas as pd
 import json
 from collections import OrderedDict
 import datetime as DT
+import os
+from dotenv import load_dotenv, find_dotenv
 
-consumer_key = ""
-consumer_secret = ""
-access_token = ""
-access_token_secret = ""
+load_dotenv(find_dotenv())
+
+consumer_key = os.environ.get('API_KEY_TWITTER')
+consumer_secret = os.environ.get('API_KEY_SECRET_TWITTER')
+access_token = os.environ.get('ACCESS_TOKEN_TWITTER')
+access_token_secret = os.environ.get('ACCESS_TOKEN_TWITTER_SECRET')
 
 auth = tw.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tw.API(auth, wait_on_rate_limit=True)
 
 search_term = "$oxen -filter:retweets"
-filepath = "/home/modeify/oxen-knight/"
+filepath = "/root/oxen-knights-website/"
 raw_data = tw.Cursor(api.search,
                    q=search_term,
                    since=str(DT.date.today()- DT.timedelta(days=7))).items(5000)

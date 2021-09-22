@@ -18,7 +18,7 @@
                 {%if points %}
         <div class="progress-section">
             <div class="rank1">
-                <img class="point-system-rank" src="/static/assets/{{current_rank}}.svg">
+                <img class="point-system-rank" src="/static/assets/{{current_rank|lower|cut:" "}}.svg">
                 <center><p class="rank-text">{{current_rank}}</p></center>
             </div>
             <div class="bar">
@@ -39,7 +39,7 @@
                 </center>
             </div>
             <div class="rank2">
-                <img class="point-system-rank" src="/static/assets/{{next_rank}}.svg">
+                <img class="point-system-rank" src="/static/assets/{{next_rank|lower|cut:" "}}.svg">
                 <center>
                 <p class="rank-text">{{next_rank}}</p>
                 </center>
@@ -121,7 +121,7 @@
                     <tbody>
                         <tr>
                         {% for key, value in scoreboard.items %}
-                        <td><img style="width:45px" title="{{value.ranking}}" src ="/static/assets/{{value.ranking}}.svg"></td>
+                        <td><img style="width:45px" title="{{value.ranking}}" src ="/static/assets/{{value.ranking|lower|cut:" "}}.svg"></td>
                         <td class="handle-text"> <a href="https://twitter.com/{{key}}">@{{key}}</a></td>
                         <td class="points-text">{{value.points}}</td>
                         <td>{{value.tweets}}</td>
@@ -158,7 +158,7 @@
                 <div class="knight-container">
                     <div class="lhs-knight">
                     <center>
-                        <img src="static/assets/{{top_knight_values.ranking}}.svg">
+                        <img src="static/assets/{{top_knight_values.ranking|lower|cut:" "}}.svg">
                         <h4 class="knight-rank">{{top_knight_values.ranking}}</h4>
                     </center>
                     </div>
@@ -243,7 +243,7 @@
             <tbody>
                 <tr>
     <tr>
-            <td><img style="width:100px" src ="../static/assets/Villager.svg"></th>
+            <td><img style="width:100px" src ="../static/assets/villager.svg"></th>
             <td>Villager</td>
             <td class="points-text">0</td>
             <td>-</td>
@@ -268,17 +268,17 @@
             <td class="points-text">1000</td>
             <td>Oxen Shirt</td>
             <tr>
-            <td><img style="width:100px" src ="../static/assets/officer knight.svg"></th>
+            <td><img style="width:100px" src ="../static/assets/officerknight.svg"></th>
             <td>Officer Knight</td>
             <td class="points-text">1500</td>
             <td>-</td>
             <tr>
-            <td><img style="width:100px" src ="../static/assets/noble knight.svg"></th>
+            <td><img style="width:100px" src ="../static/assets/nobleknight.svg"></th>
             <td>Noble Knight</td>
             <td class="points-text">2500</td>
             <td>100 Oxen</td>
             <tr>
-            <td><img style="width:100px" src ="../static/assets/bishop knight.svg"></th>
+            <td><img style="width:100px" src ="../static/assets/bishopknight.svg"></th>
             <td>Bishop Knight</td>
             <td class="points-text">4000</td>
             <td>-</td>
