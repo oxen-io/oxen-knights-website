@@ -22,7 +22,7 @@ auth.set_access_token(access_token, access_token_secret)
 api = tw.API(auth, wait_on_rate_limit=True)
 
 search_term = "$oxen -filter:retweets"
-filepath = "/root/oxen-knights-website/"
+filepath = os.path.abspath(os.getcwd()) + '/'
 raw_data = tw.Cursor(api.search,
                    q=search_term,
                    since=str(DT.date.today()- DT.timedelta(days=7))).items(5000)
