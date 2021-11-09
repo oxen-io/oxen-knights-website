@@ -7,8 +7,9 @@ import string
 import json
 import re
 import pandas as pd
+import os
 # Create your views here.
-filepath = "/root/oxen-knights-website/"
+filepath = os.path.abspath(os.getcwd()) + '/'
 class RankingReward(TemplateView):
 	template_name = 'templatesviews/rankingreward.html'
 	def get(self, request, *args, **kwargs):
